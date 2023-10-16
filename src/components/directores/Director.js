@@ -142,7 +142,10 @@ export default function Director() {
     <>
       <Title title={"Directores"} />
       {loader && <Spinner />}
-      <Table directores={directores} borrarGeneroPorId={borrarDirectorPorId} />
+      <Table
+        directores={directores}
+        borrarDirectorPorId={borrarDirectorPorId}
+      />
       <ButtonModal title="Nuevo Director" />
       <Modal
         director={director}
