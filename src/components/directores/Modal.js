@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Modal({ genero, change, guardar, clearForm }) {
+export default function Modal({ director, change, guardar, clearForm }) {
   const handleChange = (e) => {
     change(e);
   };
 
-  const guardarGenero = (e) => {
+  const guardarDirector = (e) => {
     e.preventDefault();
     guardar();
   };
@@ -37,7 +37,7 @@ export default function Modal({ genero, change, guardar, clearForm }) {
             ></button>
           </div>
           <div className="modal-body">
-            <form onSubmit={guardarGenero}>
+            <form onSubmit={guardarDirector}>
               <div className="mb-3">
                 <label for="recipient-name" className="col-form-label">
                   Nombre:
@@ -47,7 +47,7 @@ export default function Modal({ genero, change, guardar, clearForm }) {
                   className="form-control"
                   id="recipient-name"
                   onChange={handleChange}
-                  value={genero.nombre}
+                  value={director.nombre}
                   name="nombre"
                 />
               </div>
@@ -59,7 +59,7 @@ export default function Modal({ genero, change, guardar, clearForm }) {
                   className="form-control"
                   id="message-text"
                   onChange={handleChange}
-                  value={genero.descripcion}
+                  value={director.descripcion}
                   name="descripcion"
                 ></textarea>
               </div>
@@ -75,7 +75,7 @@ export default function Modal({ genero, change, guardar, clearForm }) {
                 <button
                   type="submit"
                   className="btn btn-primary"
-                  disabled={genero.nombre.length === 1}
+                  disabled={director.nombre.length === 1}
                 >
                   Enviar
                 </button>
